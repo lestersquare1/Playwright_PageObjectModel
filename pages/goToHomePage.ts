@@ -54,8 +54,14 @@ export class GoToHomePage {
   footerBecomeAMember_link: any;
   footerAdvisers_heading: any;
   footerBecomeAnAdviser_link: any;
-    mutuality_image: any;
-    mutuality_heading: any;
+  mutuality_image: any;
+  mutuality_heading: any;
+  ppsBakery_image: any;
+  ppsCopywright_text: any;
+  footerTermsAndConditions_link: any;
+  footerPrivacyPolicy_link: any;
+    directDebitTermsConditions_link: any;
+    contactEmail_link: any;
 
   constructor(page) {
     //Top part of home page
@@ -90,7 +96,9 @@ export class GoToHomePage {
       .getByRole("link", { name: "Frequently asked questions" });
 
     //Middle part of home page
-    this.welcome_heading = page.getByRole("heading", { name: "Welcome to PPS Mutual" });
+    this.welcome_heading = page.getByRole("heading", {
+      name: "Welcome to PPS Mutual",
+    });
     this.welcomeFirst_text = page.getByText("PPS Mutual is a member-owned");
     this.welcomeSecond_text = page.getByText("We’re here for professionals");
     this.welcomeThird_text = page.getByText("We’re New Zealand owned and");
@@ -98,13 +106,19 @@ export class GoToHomePage {
     this.welcomeFifth_text = page.getByText("If you’d like to find out");
     this.getInTouch_button = page.getByRole("link", { name: "Get in touch" });
 
-    this.purpose_image = page.getByRole("img", { name: "homepage scroller image 1" });    
-    this.purpose_heading = page.getByRole("heading", { name: "Purpose-built for" });
+    this.purpose_image = page.getByRole("img", {
+      name: "homepage scroller image 1",
+    });
+    this.purpose_heading = page.getByRole("heading", {
+      name: "Purpose-built for",
+    });
     this.purposeFirst_text = page.getByText("PPS Group has been insuring");
     this.purposeSecond_text = page.getByText("With a proposition focused on");
     this.purposeThird_text = page.getByText("We’re for professionals –");
 
-    this.mutuality_image = page.getByRole("img", { name: "homepage scroller image 2" });
+    this.mutuality_image = page.getByRole("img", {
+      name: "homepage scroller image 2",
+    });
     this.mutuality_heading = page.getByRole("heading", {
       name: "Mutuality is the best policy",
     });
@@ -112,19 +126,36 @@ export class GoToHomePage {
     this.mutualitySecond_text = page.getByText("Our members can take comfort");
     this.mutualityThird_text = page.getByText("This is a model built on");
 
-    this.paysToBeMember_image = page.getByRole("img", { name: "homepage scroller image 3" });
+    this.paysToBeMember_image = page.getByRole("img", {
+      name: "homepage scroller image 3",
+    });
     this.paysToBeMember_heading = page.getByRole("heading", {
       name: "It pays to be a member",
     });
-    this.paysToBeMemberFirst_text = page.getByText("Unlike most life insurers,");
-    this.paysToBeMemberSecond_text = page.getByText("Believe success is best when");
+    this.paysToBeMemberFirst_text = page.getByText(
+      "Unlike most life insurers,"
+    );
+    this.paysToBeMemberSecond_text = page.getByText(
+      "Believe success is best when"
+    );
 
-    this.whatIsMutuality_heading = page.getByRole("heading", { name: "What is mutuality?" });
-    this.whatIsMutuality_button = page.getByRole("button", { name: "Watch video" });
+    this.whatIsMutuality_heading = page.getByRole("heading", {
+      name: "What is mutuality?",
+    });
+    this.whatIsMutuality_button = page.getByRole("button", {
+      name: "Watch video",
+    });
+    this.ppsBakery_image = page.getByRole("img", {
+      name: "PPS Bakery video screenshot",
+    });
 
     //Footer of home page
-    this.footerGoToHomepage_link_ = page.getByRole("link", { name: "Go to homepage" });
-    this.footerLinkedIn_link = page.getByRole("link", { name: "Visit our LinkedIn page" });
+    this.footerGoToHomepage_link_ = page.getByRole("link", {
+      name: "Go to homepage",
+    });
+    this.footerLinkedIn_link = page.getByRole("link", {
+      name: "Visit our LinkedIn page",
+    });
     this.footerInsuranceForProfessionals_link = page
       .getByRole("contentinfo")
       .getByRole("link", { name: "Insurance for professionals" });
@@ -153,10 +184,20 @@ export class GoToHomePage {
     this.footerBecomeAMember_link = page
       .getByRole("contentinfo")
       .getByRole("link", { name: "Become a member" });
-    this.footerAdvisers_heading = page.getByRole("heading", { name: "Advisers" });
+    this.footerAdvisers_heading = page.getByRole("heading", {
+      name: "Advisers",
+    });
     this.footerBecomeAnAdviser_link = page
       .getByRole("contentinfo")
       .getByRole("link", { name: "Become an adviser" });
+
+    this.ppsCopywright_text = page.getByText("© PPS Mutual");
+    this.footerTermsAndConditions_link = page.getByRole("link", {
+      name: "Terms and Conditions",
+    });
+    this.footerPrivacyPolicy_link = page.getByRole("link", { name: "Privacy Policy" });
+    this.directDebitTermsConditions_link = page.getByRole("link", { name: "Direct Debit Terms Conditions" });
+    this.contactEmail_link = page.getByRole("link", { name: "contact@ppsmutual.co.nz" });
   }
 
   async goToHomePage() {
