@@ -9,6 +9,7 @@ test("Check Home Page", async ({ page }) => {
   // Check objects on top of page
   await expect(page).toHaveTitle("Home | PPS Mutual New Zealand");
   await expect(homePage.pps_heading).toBeVisible();
+  await expect(homePage.defaultImage).toBeVisible();
   await expect(homePage.insuranceForPros_link).toHaveText(
     "Insurance for professionals"
   );
@@ -16,6 +17,7 @@ test("Check Home Page", async ({ page }) => {
     "Profit Share Benefit"
   );
   await expect(homePage.aboutUs_link).toHaveText("About us");
+  await expect(homePage.claims_link).toHaveText("Claims");
   await expect(homePage.regulatoryAndConduct_link).toHaveText(
     "Regulatory and conduct"
   );
@@ -138,12 +140,15 @@ test("Check Home Page", async ({ page }) => {
     "Become an adviser"
   );
 
-await expect(homePage.ppsCopywright_text).toHaveText("© PPS Mutual 2025");
+  await expect(homePage.ppsCopywright_text).toHaveText("© PPS Mutual 2025");
   await expect(homePage.footerTermsAndConditions_link).toHaveText(
     "Terms and Conditions"
   );
   await expect(homePage.footerPrivacyPolicy_link).toHaveText("Privacy Policy");
-  await expect(homePage.directDebitTermsConditions_link).toHaveText("Direct Debit Terms Conditions");
-  await expect(homePage.contactEmail_link).toHaveText("contact@ppsmutual.co.nz");
-
+  await expect(homePage.directDebitTermsConditions_link).toHaveText(
+    "Direct Debit Terms Conditions"
+  );
+  await expect(homePage.contactEmail_link).toHaveText(
+    "contact@ppsmutual.co.nz"
+  );
 });

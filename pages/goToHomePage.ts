@@ -3,9 +3,11 @@ export class GoToHomePage {
 
   page: any;
   pps_heading: any;
+  defaultImage: any;
   insuranceForPros_link: any;
   profitShareBenefit_link: any;
   aboutUs_link: any;
+  claims_link: any;
   regulatoryAndConduct_link: any;
   becomeAMember_link: any;
   becomeAnAdviser_link: any;
@@ -40,6 +42,8 @@ export class GoToHomePage {
   whatIsMutuality_heading: any;
   whatIsMutuality_button: any;
 
+  ppsBakery_image: any;
+
   // Footer of home page
   footerGoToHomepage_link_: any;
   footerLinkedIn_link: any;
@@ -56,12 +60,11 @@ export class GoToHomePage {
   footerBecomeAnAdviser_link: any;
   mutuality_image: any;
   mutuality_heading: any;
-  ppsBakery_image: any;
   ppsCopywright_text: any;
   footerTermsAndConditions_link: any;
   footerPrivacyPolicy_link: any;
-    directDebitTermsConditions_link: any;
-    contactEmail_link: any;
+  directDebitTermsConditions_link: any;
+  contactEmail_link: any;
 
   constructor(page) {
     //Top part of home page
@@ -70,6 +73,7 @@ export class GoToHomePage {
       name: "PPS Mutual",
       exact: true,
     });
+    this.defaultImage = page.locator(".tan-circle.tan-circle-xl");
     this.insuranceForPros_link = page
       .getByRole("list")
       .getByRole("link", { name: "Insurance for professionals" });
@@ -82,6 +86,9 @@ export class GoToHomePage {
     this.regulatoryAndConduct_link = page
       .getByRole("list")
       .getByRole("link", { name: "Regulatory and conduct" });
+    this.claims_link = page
+      .getByRole("list")
+      .getByRole("link", { name: "Claims" });
     this.becomeAMember_link = page
       .getByRole("list")
       .getByRole("link", { name: "Become a member" });
@@ -195,9 +202,15 @@ export class GoToHomePage {
     this.footerTermsAndConditions_link = page.getByRole("link", {
       name: "Terms and Conditions",
     });
-    this.footerPrivacyPolicy_link = page.getByRole("link", { name: "Privacy Policy" });
-    this.directDebitTermsConditions_link = page.getByRole("link", { name: "Direct Debit Terms Conditions" });
-    this.contactEmail_link = page.getByRole("link", { name: "contact@ppsmutual.co.nz" });
+    this.footerPrivacyPolicy_link = page.getByRole("link", {
+      name: "Privacy Policy",
+    });
+    this.directDebitTermsConditions_link = page.getByRole("link", {
+      name: "Direct Debit Terms Conditions",
+    });
+    this.contactEmail_link = page.getByRole("link", {
+      name: "contact@ppsmutual.co.nz",
+    });
   }
 
   async goToHomePage() {
