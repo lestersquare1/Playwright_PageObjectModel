@@ -74,9 +74,12 @@ export class GoToHomePage {
       exact: true,
     });
     this.defaultImage = page.locator(".tan-circle.tan-circle-xl");
-    this.insuranceForPros_link = page
-      .getByRole("list")
-      .getByRole("link", { name: "Insurance for professionals" });
+    // this.insuranceForPros_link = page
+    //   .getByRole("list")
+    //   .getByRole("link", { name: "Insurance for professionals" });
+
+    this.insuranceForPros_link = page.locator('#mobile-nav').getByText('Insurance for professionals');
+
     this.profitShareBenefit_link = page
       .getByRole("list")
       .getByRole("link", { name: "Profit Share Benefit" });
